@@ -1,0 +1,18 @@
+import React from "react";
+
+
+
+
+
+
+const Vehicles = () => {
+
+    return (
+        <div>
+            <h1> This is the Vehicles card </h1>
+        </div>
+    )
+
+}
+
+export default Vehicles;
