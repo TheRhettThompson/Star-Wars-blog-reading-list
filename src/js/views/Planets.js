@@ -1,15 +1,30 @@
 import React from "react";
-
-
-
-
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
 
 const Planets = () => {
 
-    return (
+    const { store, actions } = useContext(Context);
+    const starWarsPlanets = store.planets.map((planets, index) => {
+        return(
+            <div key={index} className="container">
+                <div className="card-header"> Planet Name: {planets.name}</div>
+                <div className="card-details">
+                    Diameter: {planets.diameter}
+                    <br></br>
+                    Climate: {planets.climate}
+                    <br></br>
+                    Population: {planets.population}
+                </div>
+            </div>
+        ) 
+
+    })
+
+  return (
         <div>
-            <h1> This is the Planets card </h1>
+            {starWarsPlanets}
         </div>
     )
 

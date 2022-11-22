@@ -11,9 +11,11 @@ const People = () => {
             <div key={index} className="container">
                 <div className="card-header"> Character Name: {character.name}</div>
                 <div className="card-details">
-                    Character Height: {character.height}
+                    Height: {character.height}
                     <br></br>
-                    Character Birthday: {character.birth_year}
+                    Birthday: {character.birth_year}
+                    <br></br>
+                    Gender: {character.gender}
                 </div>
             </div>
         )
