@@ -31,3 +31,6 @@ const Vehicles = () => {
 }
 
 export default Vehicles;
+
+
+//https://starwars-aws.s3.amazonaws.com/img/vehicles/${vehicles.name}.jpg
