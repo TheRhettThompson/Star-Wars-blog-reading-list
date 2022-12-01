@@ -5,16 +5,21 @@ import Favorites from "../views/Favorites";
  
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 
-	const { store } = useContext(Context);
-
-	const favList = store.favorites.map((fav) =>{
+	const favList = store.favorites.map((fav) => {
 		return (
 			<div>
-				<li key //missing code
+				<li key= {fav.name}>
+					{fav.name}
+				</li>  
+				<button
+					onClick={() => actions.deleteFromFavorites(fav.name)}>
+						X
+				</button>
 			</div>
 		)
-	}) //missing code here
+	})  
 
 	return (
 		<nav className="navbar navbar-light bg-light mb-3 m-5">
@@ -25,19 +30,23 @@ export const Navbar = () => {
 
 
 			<div className="dropdown">
-			<button className = "d-flex btn btn-primary dropdown-toggle"
-			type="button"
-			//BOOTSTRAP DROP DOWN CODE HERE
-
-
-			>
-			Favorites
-			<div className="mx-2 px-2 bg-warning rounded">
+				<button 
+					className = "d-flex btn btn-primary dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton1"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					Favorites
+			<div className="mx-2 bg-warning rounded">
 				{store.favorites.length}
 			</div>
+
 			</button>
-			<ul className="dropdown-menu mt-2">
-				{ Favorites}
+			<ul className="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton1">
+				<li>
+					{favList}
+				</li>
 			</ul>
 			</div>
 		</nav>

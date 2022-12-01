@@ -38,7 +38,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			//DELETE ITEM FROM FAVORITES
 			deleteFromFavorites: (name) => {
-				const delFav = getStore()favorites.filter((fav) => fav.name !== name)
+				const delFav = getStore().favorites.filter((fav) => fav.name !== name)
+				setStore({favorites: delFav})
 			}
 
  
